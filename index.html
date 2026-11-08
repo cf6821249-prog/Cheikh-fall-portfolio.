@@ -1,595 +1,140 @@
-
-
 <!DOCTYPE html>
-
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color" content="#101010">
-
-<title>Cheikh Fall — Creative Portfolio</title>
-
-<meta name="description" content="Portfolio de Cheikh Fall, graphiste, photographe et vidéaste.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11100f">
+<title>Cheikh Fall — Visual Storyteller</title>
+<meta name="description" content="Cheikh Fall — Graphiste, photographe et vidéaste. Portfolio créatif.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-
 <style>
-
-:root {
-
-  --bg:#101010;
-
-  --surface:#191919;
-
-  --white:#f4f1eb;
-
-  --muted:#99958e;
-
-  --accent:#d5a66b;
-
+:root{--bg:#11100f;--panel:#1b1917;--ink:#f2eee7;--muted:#aaa39a;--gold:#c8a77c;--line:#ffffff20}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+.wrap{width:min(1180px,90%);margin:auto}
+header{position:absolute;z-index:5;top:0;left:0;width:100%;border-bottom:1px solid #ffffff24}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;letter-spacing:2px;font-size:17px}.brand span{color:var(--gold)}
+.links{display:flex;gap:30px;font-size:10px;letter-spacing:1.5px;color:#ded8cf}
+.links a:hover,.small-link:hover{color:var(--gold)}
+.nav-cta{font-size:10px;letter-spacing:1.5px;border:1px solid #ffffff70;padding:12px 16px}
+.hero{min-height:790px;display:flex;align-items:end;position:relative;overflow:hidden;padding:180px 0 100px;background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.25)),linear-gradient(0deg,rgba(10,10,10,.75),transparent 65%),url("https://images.unsplash.com/photo-1485846234645-a62644f84728?w=2200&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#11100f44);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:850px}
+.kicker,.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(58px,10vw,126px);line-height:.92;letter-spacing:-5px;font-weight:500;margin:28px 0}
+.hero h1 em,.contact h2 em{font-family:"Playfair Display",serif;font-weight:500;color:var(--gold)}
+.lead{max-width:520px;color:#d2ccc4;line-height:1.9;font-size:14px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;padding:15px 22px;border:1px solid var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:.25s}
+.btn.fill{background:var(--gold);color:#17130e}.btn:hover{background:var(--ink);border-color:var(--ink);color:#111}
+.hero-note{position:absolute;right:5%;bottom:42px;z-index:2;color:#d0c8be;font-size:9px;letter-spacing:2px;writing-mode:vertical-rl}
+.section{padding:115px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:48px}
+.eyebrow{margin-bottom:16px}
+h2{font-size:clamp(36px,5vw,64px);font-weight:500;letter-spacing:-2.5px}
+.subtle{color:var(--muted);font-size:12px;line-height:1.8;max-width:300px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:42px 24px}
+.work-card:nth-child(even){margin-top:90px}
+.photo{height:440px;overflow:hidden;background:#25211d;position:relative}
+.photo img{height:100%;transition:transform .8s,filter .8s;filter:brightness(.82)}
+.work-card:hover .photo img{transform:scale(1.045);filter:brightness(1)}
+.photo:after{content:"";position:absolute;inset:0;border:1px solid #ffffff12;pointer-events:none}
+.work-meta{display:flex;justify-content:space-between;gap:12px;padding:18px 2px}
+.work-meta h3{font-size:18px;font-weight:500}
+.work-meta p{font-size:11px;color:var(--muted);margin-top:7px}
+.number{color:var(--gold);font-size:11px}
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:85px;align-items:center}
+.about-photo{height:620px;background:#28231e}
+.about-copy p{color:var(--muted);font-size:13px;line-height:2;margin:22px 0}
+.tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+.tag{border:1px solid var(--line);padding:10px 13px;color:#ddd5ca;font-size:10px;letter-spacing:.5px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.service{background:var(--bg);padding:34px 28px;min-height:220px}
+.service small{color:var(--gold);letter-spacing:2px}
+.service h3{font-size:20px;font-weight:500;margin:28px 0 12px}
+.service p{font-size:12px;color:var(--muted);line-height:1.9}
+.statement{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.statement p{font-family:"Playfair Display",serif;font-size:clamp(28px,5vw,55px);line-height:1.3;max-width:850px;margin:auto}
+.statement span{color:var(--gold);font-style:italic}
+.contact{padding:125px 20px;text-align:center;background:radial-gradient(ellipse at center,#29231d 0%,#11100f 68%)}
+.contact h2{font-size:clamp(44px,8vw,88px);margin:20px 0}
+.contact p{color:var(--muted);font-size:13px;margin-bottom:30px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:10px;letter-spacing:1px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:760px){
+ nav{height:70px}.links{display:none}.nav-cta{font-size:9px;padding:10px}
+ .hero{min-height:720px;padding-bottom:90px;background-position:58% center}
+ .hero h1{letter-spacing:-3px}.hero-note{display:none}
+ .section{padding:78px 0}.section-head{display:block}.subtle{margin-top:15px}
+ .grid,.about,.services{grid-template-columns:1fr}
+ .work-card:nth-child(even){margin-top:0}.photo{height:340px}
+ .about{gap:30px}.about-photo{height:420px}
+ .service{min-height:180px}.statement{padding:65px 0}
 }
-
-* {box-sizing:border-box;margin:0;padding:0}
-
-html {scroll-behavior:smooth}
-
-body {
-
-  background:var(--bg);
-
-  color:var(--white);
-
-  font-family:'DM Sans',sans-serif;
-
-}
-
-a {color:inherit;text-decoration:none}
-
-.container {width:min(1160px,90%);margin:auto}
-
-nav {
-
-  height:85px;display:flex;align-items:center;
-
-  justify-content:space-between;border-bottom:1px solid #ffffff18;
-
-}
-
-.logo {font-size:19px;font-weight:700;letter-spacing:2px}
-
-.logo span {color:var(--accent)}
-
-.navlinks {display:flex;gap:30px;font-size:12px;color:var(--muted)}
-
-.navlinks a:hover {color:var(--accent)}
-
-.menu {display:none}
-
-.hero {
-
-  min-height:690px;display:flex;align-items:center;
-
-  position:relative;overflow:hidden;
-
-}
-
-.hero::after {
-
-  content:"";position:absolute;right:-100px;top:60px;
-
-  width:520px;height:520px;border:1px solid #ffffff13;
-
-  border-radius:50%;pointer-events:none;
-
-}
-
-.hero-content {position:relative;z-index:1;max-width:850px}
-
-.eyebrow {
-
-  color:var(--accent);font-size:11px;letter-spacing:4px;
-
-  text-transform:uppercase;margin-bottom:28px;
-
-}
-
-h1 {
-
-  font-size:clamp(55px,9vw,112px);
-
-  line-height:.99;letter-spacing:-5px;font-weight:500;
-
-}
-
-h1 em {
-
-  font-family:'Playfair Display',serif;
-
-  font-weight:500;color:var(--accent);
-
-}
-
-.hero-desc {
-
-  color:var(--muted);font-size:15px;line-height:1.9;
-
-  max-width:470px;margin-top:32px;
-
-}
-
-.hero-actions {display:flex;gap:15px;margin-top:35px;flex-wrap:wrap}
-
-.btn {
-
-  padding:15px 24px;border:1px solid var(--accent);
-
-  font-size:11px;letter-spacing:1px;text-transform:uppercase;
-
-  transition:.3s;
-
-}
-
-.btn.primary {background:var(--accent);color:#17120d}
-
-.btn:hover {background:var(--white);color:#111;border-color:var(--white)}
-
-.section {padding:110px 0}
-
-.section-label {
-
-  color:var(--accent);font-size:11px;letter-spacing:3px;
-
-  text-transform:uppercase;margin-bottom:17px;
-
-}
-
-.section-title {
-
-  font-size:clamp(34px,5vw,58px);font-weight:500;
-
-  letter-spacing:-2px;margin-bottom:48px;
-
-}
-
-.projects {
-
-  display:grid;grid-template-columns:1fr 1fr;gap:35px;
-
-}
-
-.project {margin-bottom:15px}
-
-.project-image {
-
-  width:100%;height:350px;object-fit:cover;
-
-  filter:brightness(.82);transition:.5s;
-
-}
-
-.project:hover .project-image {filter:brightness(1);transform:scale(1.015)}
-
-.project-image-wrap {overflow:hidden;background:var(--surface)}
-
-.project-info {display:flex;justify-content:space-between;gap:10px;padding-top:18px}
-
-.project-info h3 {font-size:17px;font-weight:500}
-
-.project-info p {color:var(--muted);font-size:12px;margin-top:7px}
-
-.project-number {color:var(--accent);font-size:12px}
-
-.about {
-
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
-
-}
-
-.about-image {width:100%;height:520px;object-fit:cover;filter:grayscale(100%)}
-
-.about-text {color:var(--muted);font-size:14px;line-height:2}
-
-.about-text p {margin-bottom:20px}
-
-.skills {display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-
-.skill {
-
-  border:1px solid #ffffff25;padding:11px 15px;
-
-  font-size:11px;color:var(--white);
-
-}
-
-.services {
-
-  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
-
-}
-
-.service {
-
-  background:var(--surface);padding:32px 25px;
-
-  min-height:205px;border:1px solid #ffffff0c;
-
-}
-
-.service span {color:var(--accent);font-size:12px}
-
-.service h3 {font-size:19px;font-weight:500;margin:25px 0 12px}
-
-.service p {font-size:12px;color:var(--muted);line-height:1.8}
-
-.contact {
-
-  text-align:center;padding:120px 20px;
-
-  background:var(--surface);
-
-}
-
-.contact h2 {
-
-  font-size:clamp(40px,7vw,75px);font-weight:500;
-
-  letter-spacing:-3px;margin:20px auto;
-
-}
-
-.contact p {color:var(--muted);font-size:14px;margin-bottom:32px}
-
-footer {
-
-  padding:30px 0;border-top:1px solid #ffffff18;
-
-  display:flex;justify-content:space-between;gap:15px;
-
-  color:var(--muted);font-size:11px;flex-wrap:wrap;
-
-}
-
-@media(max-width:700px) {
-
-  .navlinks {display:none}
-
-  .menu {display:block;color:var(--accent);font-size:12px}
-
-  .hero {min-height:600px}
-
-  h1 {letter-spacing:-3px}
-
-  .projects,.about,.services {grid-template-columns:1fr}
-
-  .about {gap:35px}
-
-  .about-image {height:370px}
-
-  .project-image {height:260px}
-
-  .section {padding:75px 0}
-
-  .contact {padding:85px 20px}
-
-}
-
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 </style>
-
 </head>
-
 <body>
-
-<header class="container">
-
-<nav>
-
-  <a class="logo" href="#">CHEIKH<span>.</span>FALL</a>
-
-  <div class="navlinks">
-
-    <a href="#home">ACCUEIL</a>
-
-    <a href="#work">PROJETS</a>
-
-    <a href="#about">À PROPOS</a>
-
-    <a href="#services">SERVICES</a>
-
-    <a href="#contact">CONTACT</a>
-
-  </div>
-
-  <a class="menu" href="#contact">LET'S TALK ↗</a>
-
-</nav>
-
-</header>
+<header><nav class="wrap">
+<a class="brand" href="#home">CHEIKH<span>.</span>FALL</a>
+<div class="links"><a href="#home">ACCUEIL</a><a href="#work">PROJETS</a><a href="#about">À PROPOS</a><a href="#services">EXPERTISE</a><a href="#contact">CONTACT</a></div>
+<a class="nav-cta" href="#contact">COLLABORONS ↗</a>
+</nav></header>
 
 <main>
-
-<section class="hero container" id="home">
-
-  <div class="hero-content">
-
-    <p class="eyebrow">GRAPHIC DESIGN · PHOTOGRAPHY · FILMMAKING</p>
-
-    <h1>Creating<br>with <em>purpose.</em></h1>
-
-    <p class="hero-desc">
-
-      Je suis Cheikh Fall, graphiste, photographe et vidéaste.
-
-      Je donne vie aux idées à travers l'image, le design et
-
-      la narration visuelle.
-
-    </p>
-
-    <div class="hero-actions">
-
-      <a href="#work" class="btn primary">Découvrir mes projets ↗</a>
-
-      <a href="#contact" class="btn">Me contacter</a>
-
-    </div>
-
-  </div>
-
+<section class="hero" id="home">
+<div class="wrap hero-inner">
+<p class="kicker">GRAPHIC DESIGN · PHOTOGRAPHY · FILMMAKING</p>
+<h1>Stories told<br>through <em>images.</em></h1>
+<p class="lead">Je suis Cheikh Fall, graphiste, photographe et vidéaste. J'imagine et façonne des univers visuels où chaque image raconte une histoire.</p>
+<div class="actions"><a class="btn fill" href="#work">Explorer les projets ↗</a><a class="btn" href="#about">Découvrir mon univers</a></div>
+</div><span class="hero-note">VISUAL STORYTELLING — MAURITANIA / SENEGAL</span>
 </section>
 
-<section class="section container" id="work">
-
-  <p class="section-label">01 — SELECTED WORKS</p>
-
-  <h2 class="section-title">Projets sélectionnés.</h2>
-
-  <div class="projects">
-
-    <article class="project">
-
-      <div class="project-image-wrap">
-
-        <img class="project-image" src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1000" alt="Projet de développement">
-
-      </div>
-
-      <div class="project-info">
-
-        <div>
-
-          <h3>PNUD — Résilience</h3>
-
-          <p>Photographie · Vidéo · 2025–2026</p>
-
-        </div>
-
-        <span class="project-number">01</span>
-
-      </div>
-
-    </article>
-
-    <article class="project">
-
-      <div class="project-image-wrap">
-
-        <img class="project-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000" alt="Séminaire professionnel">
-
-      </div>
-
-      <div class="project-info">
-
-        <div>
-
-          <h3>ONU Femmes — ACT</h3>
-
-          <p>Couverture événementielle · 2025</p>
-
-        </div>
-
-        <span class="project-number">02</span>
-
-      </div>
-
-    </article>
-
-    <article class="project">
-
-      <div class="project-image-wrap">
-
-        <img class="project-image" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000" alt="Campagne de sensibilisation">
-
-      </div>
-
-      <div class="project-info">
-
-        <div>
-
-          <h3>UNICEF — Sensibilisation</h3>
-
-          <p>Photographie · Vidéo · 2025</p>
-
-        </div>
-
-        <span class="project-number">03</span>
-
-      </div>
-
-    </article>
-
-    <article class="project">
-
-      <div class="project-image-wrap">
-
-        <img class="project-image" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1000" alt="Formation professionnelle">
-
-      </div>
-
-      <div class="project-info">
-
-        <div>
-
-          <h3>GIZ — Build4Skills</h3>
-
-          <p>Production audiovisuelle · 2024</p>
-
-        </div>
-
-        <span class="project-number">04</span>
-
-      </div>
-
-    </article>
-
-  </div>
-
+<section class="section wrap" id="work">
+<div class="section-head reveal"><div><p class="eyebrow">01 — SELECTED STORIES</p><h2>Projets sélectionnés.</h2></div><p class="subtle">Des histoires humaines, des idées en images et des expériences racontées à travers la création visuelle.</p></div>
+<div class="grid">
+<article class="work-card reveal"><div class="photo"><img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1200&q=85" alt="Projet de résilience et développement"></div><div class="work-meta"><div><h3>PNUD — Résilience</h3><p>Reportage photo & vidéo · 2025–2026</p></div><span class="number">01</span></div></article>
+<article class="work-card reveal"><div class="photo"><img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1200&q=85" alt="Rencontre et séminaire"></div><div class="work-meta"><div><h3>ONU Femmes — ACT</h3><p>Couverture événementielle · 2025</p></div><span class="number">02</span></div></article>
+<article class="work-card reveal"><div class="photo"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=85" alt="Campagne de sensibilisation santé"></div><div class="work-meta"><div><h3>UNICEF — Sensibilisation</h3><p>Photographie & vidéo · 2025</p></div><span class="number">03</span></div></article>
+<article class="work-card reveal"><div class="photo"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=85" alt="Formation et collaboration professionnelle"></div><div class="work-meta"><div><h3>GIZ — Build4Skills</h3><p>Production audiovisuelle · 2024</p></div><span class="number">04</span></div></article>
+</div>
 </section>
 
-<section class="section container" id="about">
+<section class="statement"><p class="reveal">“Une image forte ne se contente pas d'être vue. Elle doit <span>faire ressentir.</span>”</p></section>
 
-  <div class="about">
-
-    <div>
-
-      <img class="about-image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1000" alt="Portrait artistique">
-
-    </div>
-
-    <div>
-
-      <p class="section-label">02 — ABOUT ME</p>
-
-      <h2 class="section-title">L'image comme langage.</h2>
-
-      <div class="about-text">
-
-        <p>
-
-          Diplômé en Art graphique et numérique, mention
-
-          audiovisuel, je suis un créatif passionné par
-
-          l'univers de l'image et de la communication visuelle.
-
-        </p>
-
-        <p>
-
-          Mon parcours m'a permis de développer une approche
-
-          polyvalente, entre création graphique, photographie,
-
-          réalisation et montage vidéo.
-
-        </p>
-
-        <p>
-
-          À travers mes collaborations et mes projets,
-
-          je cherche à raconter des histoires authentiques
-
-          et à créer des images qui ont du sens.
-
-        </p>
-
-      </div>
-
-      <div class="skills">
-
-        <span class="skill">Photoshop</span>
-
-        <span class="skill">Illustrator</span>
-
-        <span class="skill">InDesign</span>
-
-        <span class="skill">Photographie</span>
-
-        <span class="skill">Montage vidéo</span>
-
-        <span class="skill">Réalisation</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
+<section class="section wrap" id="about">
+<div class="about">
+<div class="reveal"><img class="about-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1100&q=85" alt="Portrait à remplacer par votre photo"></div>
+<div class="about-copy reveal"><p class="eyebrow">02 — THE CREATIVE</p><h2>L'image comme langage.</h2>
+<p>Diplômé en Art graphique et numérique, mention audiovisuel, je développe une approche polyvalente à la croisée du design graphique, de la photographie et de la production vidéo.</p>
+<p>À travers mes collaborations et mes projets, je documente des histoires, valorise des initiatives et donne forme à des idées. Mon objectif : créer des images justes, sensibles et mémorables.</p>
+<div class="tags"><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">InDesign</span><span class="tag">Photographie</span><span class="tag">Réalisation</span><span class="tag">Montage vidéo</span></div>
+</div>
+</div>
 </section>
 
-<section class="section container" id="services">
-
-  <p class="section-label">03 — WHAT I DO</p>
-
-  <h2 class="section-title">Mon univers créatif.</h2>
-
-  <div class="services">
-
-    <article class="service">
-
-      <span>01 / DESIGN</span>
-
-      <h3>Design graphique</h3>
-
-      <p>Identité visuelle, direction artistique, supports de communication et création digitale.</p>
-
-    </article>
-
-    <article class="service">
-
-      <span>02 / PHOTOGRAPHY</span>
-
-      <h3>Photographie</h3>
-
-      <p>Portrait, reportage, événementiel et photographie institutionnelle.</p>
-
-    </article>
-
-    <article class="service">
-
-      <span>03 / FILM</span>
-
-      <h3>Production vidéo</h3>
-
-      <p>Prise de vue, réalisation, montage et storytelling audiovisuel.</p>
-
-    </article>
-
-  </div>
-
+<section class="section wrap" id="services">
+<div class="section-head reveal"><div><p class="eyebrow">03 — EXPERTISE</p><h2>Ce que je crée.</h2></div><p class="subtle">De la première idée à l'image finale, une attention portée au détail et au récit.</p></div>
+<div class="services reveal">
+<article class="service"><small>01 / DESIGN</small><h3>Direction artistique</h3><p>Identité visuelle, design éditorial, supports de communication et création digitale.</p></article>
+<article class="service"><small>02 / STILL</small><h3>Photographie</h3><p>Portrait, reportage, événementiel et photographie institutionnelle.</p></article>
+<article class="service"><small>03 / MOTION</small><h3>Production vidéo</h3><p>Prise de vue, réalisation, montage et storytelling audiovisuel.</p></article>
+</div>
 </section>
 
-<section class="contact" id="contact">
-
-  <p class="section-label">04 — GET IN TOUCH</p>
-
-  <h2>Un projet en tête ?<br><em>Parlons-en.</em></h2>
-
-  <p>Disponible pour de nouvelles collaborations et opportunités.</p>
-
-  <a class="btn primary" href="mailto:contact@cheikhfall.com">Me contacter ↗</a>
-
-</section>
-
+<section class="contact" id="contact"><p class="eyebrow">04 — LET'S CREATE SOMETHING</p><h2>Une histoire à<br><em>raconter ?</em></h2><p>Ouvert aux collaborations, projets créatifs et nouvelles opportunités.</p><a class="btn fill" href="mailto:VOTRE-EMAIL@EXEMPLE.COM">Entrer en contact ↗</a></section>
 </main>
-
-<footer class="container">
-
-  <span>© 2026 CHEIKH FALL — ALL RIGHTS RESERVED</span>
-
-  <span>MAURITANIA · SENEGAL</span>
-
-  <a href="#home">BACK TO TOP ↑</a>
-
-</footer>
-
-</body>
-
-</html>
+<footer class="wrap"><span>© 2026 CHEIKH FALL — PORTFOLIO</span><span>MAURITANIA · SENEGAL</span><a href="#home">RETOUR EN HAUT ↑</a></footer>
+<script>
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body></html>
