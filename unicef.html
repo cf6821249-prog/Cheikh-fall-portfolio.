@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11100f">
+<title>UNICEF — Cheikh Fall</title>
+<meta name="description" content="Projets réalisés pour l'UNICEF : photographie et vidéo. Cheikh Fall, visual storyteller.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#11100f;--panel:#1b1917;--ink:#f2eee7;--muted:#aaa39a;--gold:#c8a77c;--line:#ffffff20}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+.wrap{width:min(1180px,90%);margin:auto}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+header{border-bottom:1px solid #ffffff24}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;letter-spacing:2px;font-size:17px}.brand span{color:var(--gold)}
+.back{font-size:10px;letter-spacing:1.5px;border:1px solid #ffffff70;padding:12px 16px}
+.back:hover{color:var(--gold);border-color:var(--gold)}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+h1{font-size:clamp(52px,9vw,110px);line-height:.95;letter-spacing:-4px;font-weight:500}
+h1 em{font-family:"Playfair Display",serif;color:var(--gold)}
+.intro{padding:90px 0 60px}
+.intro p.lead{max-width:560px;color:#d2ccc4;line-height:1.9;font-size:14px;margin-top:28px}
+.mission-nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.mission-nav a{border:1px solid var(--line);padding:10px 14px;font-size:10px;letter-spacing:.8px;color:#ddd5ca}
+.mission-nav a:hover{border-color:var(--gold);color:var(--gold)}
+.mission{padding:70px 0;border-top:1px solid var(--line)}
+.mission-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px;flex-wrap:wrap}
+h2{font-size:clamp(30px,4.5vw,52px);font-weight:500;letter-spacing:-2px}
+.meta{color:var(--muted);font-size:12px;line-height:1.8;max-width:380px}
+.date{color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:8px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery button{border:0;background:#25211d;padding:0;cursor:zoom-in;height:280px;overflow:hidden}
+.gallery img{height:100%;filter:brightness(.88);transition:transform .6s,filter .6s}
+.gallery button:hover img{transform:scale(1.05);filter:brightness(1)}
+.video{margin-top:12px;aspect-ratio:16/9;background:#000}
+.video iframe{width:100%;height:100%;border:0}
+.empty{border:1px dashed var(--line);padding:40px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:1px}
+.contact{padding:100px 20px;text-align:center;background:radial-gradient(ellipse at center,#29231d 0%,#11100f 68%)}
+.contact h2{margin:16px 0 28px}
+.btn{display:inline-block;padding:15px 22px;border:1px solid var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:.25s;margin:4px}
+.btn.fill{background:var(--gold);color:#17130e}.btn:hover{background:var(--ink);border-color:var(--ink);color:#111}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:10px;letter-spacing:1px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.lb{position:fixed;inset:0;z-index:50;background:#000e;display:none;align-items:center;justify-content:center;padding:4vw}
+.lb.open{display:flex}
+.lb img{width:auto;max-width:100%;max-height:88vh;object-fit:contain}
+.lb button{position:absolute;background:none;border:1px solid #ffffff70;color:#fff;width:44px;height:44px;font-size:18px;cursor:pointer}
+.lb .x{top:20px;right:20px}.lb .p{left:16px}.lb .n{right:16px}
+@media(max-width:760px){
+ nav{height:70px}.intro{padding:60px 0 40px}.mission{padding:50px 0}
+ .gallery{grid-template-columns:1fr 1fr}.gallery button{height:170px}
+ h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+<a class="brand" href="index.html">CHEIKH<span>.</span>FALL</a>
+<a class="back" href="index.html#work">← TOUS LES PROJETS</a>
+</nav></header>
+
+<main>
+<section class="intro wrap">
+<p class="eyebrow">Photographie &amp; vidéo</p>
+<h1><em>UNICEF</em></h1>
+<p class="lead" id="intro-text"><!-- MODIFIER ICI : une courte présentation de ta collaboration avec l'UNICEF et de ton rôle --></p>
+<div class="mission-nav" id="mission-nav"></div>
+</section>
+<div id="missions"></div>
+
+<section class="contact" id="contact">
+<p class="eyebrow">Let's create something</p>
+<h2>Une histoire à <em style="font-family:'Playfair Display',serif;color:var(--gold)">raconter ?</em></h2>
+<a class="btn fill" href="mailto:cf6821249@gmail.com">Entrer en contact ↗</a>
+<a class="btn" href="index.html#work">Voir les autres projets</a>
+</section>
+</main>
+<footer class="wrap"><span>© 2026 CHEIKH FALL — PORTFOLIO</span><a href="#">RETOUR EN HAUT ↑</a></footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+<button class="x" aria-label="Fermer">✕</button><button class="p" aria-label="Précédente">←</button>
+<img alt=""><button class="n" aria-label="Suivante">→</button>
+</div>
+
+<script>
+/* =====================================================
+   MODIFIER ICI — c'est la seule partie à remplir
+   - photos : noms des fichiers placés dans images/unicef/
+   - video  : lien YouTube ou Vimeo (laisser "" s'il n'y en a pas)
+   - date / description : laisser "" pour ne rien afficher
+   ===================================================== */
+const INTRO = "";
+const MISSIONS = [
+  { id:"pev", titre:"Programme élargi de vaccination", date:"", description:"",
+    photos:[], video:"" },
+  { id:"sensibilisation", titre:"Campagne de sensibilisation UNICEF", date:"", description:"",
+    photos:[], video:"" },
+  { id:"ded", titre:"Visite de DED", date:"", description:"",
+    photos:[], video:"" }
+];
+const DOSSIER = "images/unicef/";
+/* ===================================================== */
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function embed(u){
+  let m=u.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);
+  if(m)return "https://www.youtube-nocookie.com/embed/"+m[1];
+  m=u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  return m?"https://player.vimeo.com/video/"+m[1]:"";
+}
+if(INTRO)document.getElementById("intro-text").textContent=INTRO;
+else document.getElementById("intro-text").remove();
+
+const all=[];
+document.getElementById("mission-nav").innerHTML=MISSIONS.map(m=>`<a href="#${m.id}">${esc(m.titre)}</a>`).join("");
+document.getElementById("missions").innerHTML=MISSIONS.map((m,i)=>{
+  const start=all.length;
+  m.photos.forEach(p=>all.push({src:DOSSIER+p,alt:m.titre}));
+  const gal=m.photos.length?`<div class="gallery">${m.photos.map((p,j)=>`<button data-i="${start+j}" aria-label="Agrandir la photo ${j+1}"><img loading="lazy" src="${DOSSIER+esc(p)}" alt="${esc(m.titre)} — photo ${j+1}"></button>`).join("")}</div>`:"";
+  const e=m.video?embed(m.video):"";
+  const vid=e?`<div class="video"><iframe src="${e}" title="${esc(m.titre)} — vidéo" loading="lazy" allowfullscreen></iframe></div>`:"";
+  const empty=(!gal&&!vid)?`<div class="empty">PHOTOS ET VIDÉOS À VENIR</div>`:"";
+  return `<section class="mission" id="${m.id}"><div class="wrap">
+  <div class="mission-head"><div><p class="eyebrow">${String(i+1).padStart(2,"0")} — Mission</p><h2>${esc(m.titre)}</h2></div>
+  <div class="meta">${m.date?`<p class="date">${esc(m.date)}</p>`:""}${m.description?esc(m.description):""}</div></div>
+  ${gal}${vid}${empty}</div></section>`;
+}).join("");
+
+const lb=document.getElementById("lb"),lbi=lb.querySelector("img");let cur=0;
+const show=i=>{cur=(i+all.length)%all.length;lbi.src=all[cur].src;lbi.alt=all[cur].alt};
+const close=()=>{lb.classList.remove("open");lb.setAttribute("aria-hidden","true");document.body.style.overflow=""};
+document.addEventListener("click",e=>{const b=e.target.closest(".gallery button");if(b){show(+b.dataset.i);lb.classList.add("open");lb.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}});
+lb.querySelector(".x").onclick=close;
+lb.querySelector(".p").onclick=()=>show(cur-1);
+lb.querySelector(".n").onclick=()=>show(cur+1);
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+</script>
+</body>
+</html>
