@@ -123,10 +123,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <section class="section wrap" id="work">
 <div class="section-head reveal"><div><p class="eyebrow">01 — SELECTED STORIES</p><h2>Projets sélectionnés.</h2></div><p class="subtle">Des histoires humaines, des idées en images et des expériences racontées à travers la création visuelle.</p></div>
 <div class="grid">
-<article class="work-card reveal"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1200&q=85" alt="Projet de résilience et développement"></div><div class="work-meta"><div><h3>PNUD — Résilience</h3><p>Reportage photo & vidéo · 2025–2026</p></div><span class="number">01</span></div></article>
-<article class="work-card reveal"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1200&q=85" alt="Rencontre et séminaire"></div><div class="work-meta"><div><h3>ONU Femmes — ACT</h3><p>Couverture événementielle · 2025</p></div><span class="number">02</span></div></article>
-<article class="work-card reveal"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=85" alt="Campagne de sensibilisation santé"></div><div class="work-meta"><div><h3>UNICEF — Sensibilisation</h3><p>Photographie & vidéo · 2025</p></div><span class="number">03</span></div></article>
-<article class="work-card reveal"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=85" alt="Formation et collaboration professionnelle"></div><div class="work-meta"><div><h3>GIZ — Build4Skills</h3><p>Production audiovisuelle · 2024</p></div><span class="number">04</span></div></article>
+<article class="work-card reveal"><div class="photo"><img loading="lazy" src="images/pnud.jpg" onerror="imgFallback(this)" alt="Projet de résilience et développement"></div><div class="work-meta"><div><h3>PNUD — Résilience</h3><p>Reportage photo & vidéo · 2025–2026</p></div><span class="number">01</span></div></article>
+<article class="work-card reveal"><div class="photo"><img loading="lazy" src="images/onufemme.jpg" onerror="imgFallback(this)" alt="Rencontre et séminaire"></div><div class="work-meta"><div><h3>ONU Femmes — ACT</h3><p>Couverture événementielle · 2025</p></div><span class="number">02</span></div></article>
+<article class="work-card reveal"><div class="photo"><img loading="lazy" src="images/unicef.jpg" onerror="imgFallback(this)" alt="Campagne de sensibilisation santé"></div><div class="work-meta"><div><h3>UNICEF — Sensibilisation</h3><p>Photographie & vidéo · 2025</p></div><span class="number">03</span></div></article>
+<article class="work-card reveal"><div class="photo"><img loading="lazy" src="images/giz.jpg" onerror="imgFallback(this)" alt="Formation et collaboration professionnelle"></div><div class="work-meta"><div><h3>GIZ — Build4Skills</h3><p>Production audiovisuelle · 2024</p></div><span class="number">04</span></div></article>
+<article class="work-card reveal"><div class="photo"><img loading="lazy" src="images/itm.jpg" onerror="imgFallback(this)" alt="Projet ITM"></div><div class="work-meta"><div><h3>ITM</h3><p>Photographie & vidéo · 2025</p></div><span class="number">05</span></div></article>
 </div>
 </section>
 
@@ -134,7 +135,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
 <section class="section wrap" id="about">
 <div class="about">
-<div class="reveal"><img class="about-photo" loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1100&q=85" alt="Portrait à remplacer par votre photo"></div>
+<div class="reveal"><img class="about-photo" loading="lazy" src="images/portrait.jpg" onerror="imgFallback(this)" alt="Portrait de Cheikh Fall"></div>
 <div class="about-copy reveal"><p class="eyebrow">02 — THE CREATIVE</p><h2>L'image comme langage.</h2>
 <p>Diplômé en Art graphique et numérique, mention audiovisuel, je développe une approche polyvalente à la croisée du design graphique, de la photographie et de la production vidéo.</p>
 <p>À travers mes collaborations et mes projets, je documente des histoires, valorise des initiatives et donne forme à des idées. Mon objectif : créer des images justes, sensibles et mémorables.</p>
@@ -160,6 +161,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <script>
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const EXT=["jpg","jpeg","png","webp","JPG","JPEG","PNG"];
+function imgFallback(img){const base=img.getAttribute("src").replace(/\.[^./]+$/,"");const i=+(img.dataset.try||0);if(i<EXT.length){img.dataset.try=i+1;img.src=base+"."+EXT[i]}else{img.onerror=null}}
 const menu=document.getElementById("mobile-menu"),burger=document.querySelector(".burger");
 const setMenu=o=>{menu.classList.toggle("open",o);burger.setAttribute("aria-expanded",o);menu.setAttribute("aria-hidden",!o);document.body.style.overflow=o?"hidden":""};
 burger.addEventListener("click",()=>setMenu(true));
